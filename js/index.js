@@ -46,8 +46,13 @@ const container = document.getElementsByClassName("container");
 const cta = document.getElementsByClassName("cta");
 const ctaText = document.getElementsByClassName("cta-text");
 const ctaImg = document.getElementById("cta-img");
+const middleImg = document.getElementById("middle-img");
 const mainContent = document.getElementsByClassName("main-content");
 const topContent = document.getElementsByClassName("top-content");
 const bottomContent = document.getElementsByClassName("bottom-content");
 const textContent = document.getElementsByClassName("text-content");
 const contact = document.getElementsByClassName("contact");
+
+// Use IDs to update image src paths
+ctaImg.setAttribute('src', siteContent['cta']['img-src']);
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
