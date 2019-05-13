@@ -43,16 +43,55 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // Create selectors to point to elements
 const container = document.getElementsByClassName("container");
+const nav = document.querySelectorAll('header nav a');
 const cta = document.getElementsByClassName("cta");
-const ctaText = document.getElementsByClassName("cta-text");
+const ctaText = document.querySelector('.cta-text')
 const ctaImg = document.getElementById("cta-img");
 const middleImg = document.getElementById("middle-img");
 const mainContent = document.getElementsByClassName("main-content");
 const topContent = document.getElementsByClassName("top-content");
 const bottomContent = document.getElementsByClassName("bottom-content");
-const textContent = document.getElementsByClassName("text-content");
-const contact = document.getElementsByClassName("contact");
+const textContenth4 = document.querySelectorAll(".text-content h4");
+const textContentp = document.querySelectorAll(".text-content p");
+
+const contact = document.querySelector(".contact");
 
 // Use IDs to update image src paths
 ctaImg.setAttribute('src', siteContent['cta']['img-src']);
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+// Update HTML with JSON data
+
+// nav
+nav[0].textContent = siteContent['nav']['nav-item-1'];
+nav[1].textContent = siteContent['nav']['nav-item-2'];
+nav[2].textContent = siteContent['nav']['nav-item-3'];
+nav[3].textContent = siteContent['nav']['nav-item-4'];
+nav[4].textContent = siteContent['nav']['nav-item-5'];
+nav[5].textContent = siteContent['nav']['nav-item-6'];
+
+// cta
+ctaText.children[0].textContent = siteContent['cta']['h1'];
+ctaText.children[1].textContent = siteContent['cta']['button'];
+
+// text content
+textContenth4[0].textContent = siteContent['main-content']['features-h4'];
+textContentp[0].textContent = siteContent['main-content']['features-content'];
+
+textContenth4[1].textContent = siteContent['main-content']['about-h4'];
+textContentp[1].textContent = siteContent['main-content']['about-content'];
+
+textContenth4[2].textContent = siteContent['main-content']['services-h4'];
+textContentp[2].textContent = siteContent['main-content']['services-content'];
+
+textContenth4[3].textContent = siteContent['main-content']['product-h4'];
+textContentp[3].textContent = siteContent['main-content']['product-content'];
+
+textContenth4[4].textContent = siteContent['main-content']['vision-h4'];
+textContentp[4].textContent = siteContent['main-content']['vision-content'];
+
+// contact
+contact.children[0].textContent = siteContent['contact']['contact-h4'];
+contact.children[1].textContent = siteContent['contact']['address'];
+contact.children[2].textContent = siteContent['contact']['phone'];
+contact.children[3].textContent = siteContent['contact']['email'];
