@@ -43,7 +43,8 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // Create selectors to point to elements
 const container = document.getElementsByClassName("container");
-const nav = document.querySelectorAll('header nav a');
+const nav = document.querySelector('header nav');
+const navLinks = document.querySelectorAll('header nav a');
 const cta = document.getElementsByClassName("cta");
 const ctaText = document.querySelector('.cta-text')
 const ctaImg = document.getElementById("cta-img");
@@ -63,12 +64,12 @@ middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 // Update HTML with JSON data
 
 // nav
-nav[0].textContent = siteContent['nav']['nav-item-1'];
-nav[1].textContent = siteContent['nav']['nav-item-2'];
-nav[2].textContent = siteContent['nav']['nav-item-3'];
-nav[3].textContent = siteContent['nav']['nav-item-4'];
-nav[4].textContent = siteContent['nav']['nav-item-5'];
-nav[5].textContent = siteContent['nav']['nav-item-6'];
+navLinks[0].textContent = siteContent['nav']['nav-item-1'];
+navLinks[1].textContent = siteContent['nav']['nav-item-2'];
+navLinks[2].textContent = siteContent['nav']['nav-item-3'];
+navLinks[3].textContent = siteContent['nav']['nav-item-4'];
+navLinks[4].textContent = siteContent['nav']['nav-item-5'];
+navLinks[5].textContent = siteContent['nav']['nav-item-6'];
 
 // cta
 ctaText.children[0].textContent = siteContent['cta']['h1'];
@@ -95,3 +96,21 @@ contact.children[0].textContent = siteContent['contact']['contact-h4'];
 contact.children[1].textContent = siteContent['contact']['address'];
 contact.children[2].textContent = siteContent['contact']['phone'];
 contact.children[3].textContent = siteContent['contact']['email'];
+
+// change color of navigation text to green
+navLinks.forEach(navLink => navLink.setAttribute('style', 'color: green'));
+
+// add two new navigation items
+const navItem1 = document.createElement('a');
+navItem1.setAttribute('style', 'color: green');
+navItem1.textContent = "Careers";
+
+const navItem2 = document.createElement('a');
+navItem2.setAttribute('style', 'color: green');
+navItem2.textContent = "Press";
+
+nav.appendChild(navItem2);
+nav.prepend(navItem1);
+
+
+
