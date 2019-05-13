@@ -149,5 +149,5 @@ ctaText.children[1].addEventListener('pointerleave', (event) => {
 });
 
 ctaText.children[1].addEventListener('click', () => {
-  ctaText.children[0].textContent = '*Isaac\r\nis\r\nAwesome';
+  ctaText.children[0].textContent = 'Isaac\r\nis\r\nAwesome';
 });
