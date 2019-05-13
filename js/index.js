@@ -72,7 +72,12 @@ navLinks[4].textContent = siteContent['nav']['nav-item-5'];
 navLinks[5].textContent = siteContent['nav']['nav-item-6'];
 
 // cta
+siteContent['cta']['h1'] = 'DOM\r\nIs\r\n Awesome';
+ctaText.children[0].setAttribute('style', 'white-space: pre;');
+
 ctaText.children[0].textContent = siteContent['cta']['h1'];
+
+
 ctaText.children[1].textContent = siteContent['cta']['button'];
 
 // text content
@@ -93,6 +98,10 @@ textContentp[4].textContent = siteContent['main-content']['vision-content'];
 
 // contact
 contact.children[0].textContent = siteContent['contact']['contact-h4'];
+
+siteContent['contact']['address'] = '123 Way 456 Street\r\nSomewhere, USA'
+contact.children[1].setAttribute('style', 'white-space: pre;');
+
 contact.children[1].textContent = siteContent['contact']['address'];
 contact.children[2].textContent = siteContent['contact']['phone'];
 contact.children[3].textContent = siteContent['contact']['email'];
