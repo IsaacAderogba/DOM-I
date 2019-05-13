@@ -40,3 +40,14 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// Create selectors to point to elements
+const container = document.getElementsByClassName("container");
+const cta = document.getElementsByClassName("cta");
+const ctaText = document.getElementsByClassName("cta-text");
+const ctaImg = document.getElementById("cta-img");
+const mainContent = document.getElementsByClassName("main-content");
+const topContent = document.getElementsByClassName("top-content");
+const bottomContent = document.getElementsByClassName("bottom-content");
+const textContent = document.getElementsByClassName("text-content");
+const contact = document.getElementsByClassName("contact");
