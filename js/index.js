@@ -56,6 +56,8 @@ const textContenth4 = document.querySelectorAll(".text-content h4");
 const textContentp = document.querySelectorAll(".text-content p");
 
 const contact = document.querySelector(".contact");
+const footer = document.querySelector('footer'); 
+const footerText = document.querySelector('footer p');
 
 // Use IDs to update image src paths
 ctaImg.setAttribute('src', siteContent['cta']['img-src']);
@@ -106,6 +108,9 @@ contact.children[1].textContent = siteContent['contact']['address'];
 contact.children[2].textContent = siteContent['contact']['phone'];
 contact.children[3].textContent = siteContent['contact']['email'];
 
+// footer
+footerText.textContent = siteContent['footer']['copyright'];
+
 // change color of navigation text to green
 navLinks.forEach(navLink => navLink.setAttribute('style', 'color: green'));
 
@@ -121,5 +126,15 @@ navItem2.textContent = "Press";
 nav.appendChild(navItem2);
 nav.prepend(navItem1);
 
+// update button style 
+ctaText.children[1].setAttribute('style', 'color: white; background: green; border: none');
 
+// invert footer colour to black
+footer.setAttribute('style', 'background: black; color: white; padding: 10px;')
+ 
+// add image to right of contact section
+const contactImage = document.createElement('img');
+contactImage.setAttribute('src', 'img/contact.png');
 
+contact.setAttribute('style', 'display: flex; flex-direction: column; max-height: 250px; flex-wrap: wrap;')
+contact.appendChild(contactImage);
