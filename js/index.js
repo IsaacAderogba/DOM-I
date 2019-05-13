@@ -138,3 +138,16 @@ contactImage.setAttribute('src', 'img/contact.png');
 
 contact.setAttribute('style', 'display: flex; flex-direction: column; max-height: 250px; flex-wrap: wrap;')
 contact.appendChild(contactImage);
+
+// Event Listener and Response
+ctaText.children[1].addEventListener('pointerenter', (event) => {
+  event.target.style.backgroundColor = 'black';
+});
+
+ctaText.children[1].addEventListener('pointerleave', (event) => {
+  event.target.style.backgroundColor = 'green';
+});
+
+ctaText.children[1].addEventListener('click', () => {
+  ctaText.children[0].textContent = '*Isaac\r\nis\r\nAwesome';
+});
