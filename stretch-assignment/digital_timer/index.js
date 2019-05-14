@@ -1,37 +1,51 @@
-// doesn't work
+let digits = document.querySelector(".digits");
+
+let secondTens = document.querySelector("#secondTens");
+let secondOne = document.querySelector("#secondOnes");
+let msHundreds = document.querySelector("#msHundreds");
+let msTens = document.querySelector("#msTens");
+
+class Timer {
+    constructor() {
+        this.firstCount = 0;
+        this.secondCount = 0;
+        this.thirdCount = 0;
+        this.fourthCount = 0;
+    }
+
+    startTimer() {
+        console.log(this.fourthCount, this.thirdCount, ':', this.secondCount, this.firstCount);
 
 
-// class Timer {
-//     constructor() {
-//         this.firstCount = 0;
-//         this.secondCount = 0;
-//         this.thirdCount = 0;
-//         this.fourthCount = 0;
-//     }
+        if (this.firstCount < 9) {
+            this.firstCount++;
+            msTens.textContent = this.firstCount;
 
-//     startTimer() {
-//         console.log(this.fourthCount, this.thirdCount, ':', this.secondCount, this.firstCount);
+        } else {
+            this.secondCount++;
+            this.firstCount = 0;
+            msHundreds.textContent = this.secondCount
 
-//         if(this.firstCount < 9) {
-//             this.firstCount++;
+            if (this.secondCount > 9) {
+                this.secondCount = 0;
+                this.thirdCount = this.thirdCount + 1;
+                secondOne.textContent = this.thirdCount
 
-//         } else {
-//             this.secondCount = this.secondCount + 1;
-//             this.firstCount = 0;
+                if (this.thirdCount > 9) {
+                    this.thirdCount = 0;
+                    this.fourthCount = this.fourthCount + 1;
+                    secondTens = this.fourthCount
+                    digits.classList.add('redDigit')
+                }
+            }
+        }
+    };
+}
 
-//             if(this.secondCount === 10){
-//                 this.thirdCount = this.thirdCount + 1;
-//                 this.secoundCount = 0;
+const windowTimer = new Timer();
 
-//                 if(this.thirdCount === 10) {
-//                     this.fourthCount = this.fourthCount + 1;
-//                     this.thirdCount = 0;
-//                 }
-//             }
-//         }
-//     };
-// }
+function newTimer() {
+    windowTimer.startTimer();
+};
 
-// const windowTimer = new Timer();
-
-// window.setInterval(windowTimer.startTimer, 10);
+let interval = window.setInterval(newTimer, 10);
